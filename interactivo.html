@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/confetti.css">
+  <style>
+   
+    #header {
+      background-color: #74e651;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .nav {
+      padding-right: 20px;
+    }
+    .nav ul li {
+      display: inline;
+      padding: 0 10px;
+    }
+    h1 {
+      text-align: center;
+      color: black;
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .barra {
+      padding: 10px;
+      margin: 5px;
+      background: aqua;
+      flex: 3;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+    .contenido {
+      padding: 10px;
+      border-radius: 10px;
+      background: rgb(251, 241, 100);
+      margin: 5px;
+      flex: 1 150px;
+    }
+    .subcontenido2 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #resultado {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    #galeria {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: 100px;
+    }
+    .proyecto {
+      height: 150px;
+      max-width: 150px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      margin: 10px;
+      flex: 1 100px;
+    }
+    .barra a {
+      display: block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background-image: url('maquillaje.jpg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+    #hotspot1 {
+      position: absolute;
+      top: 50px;
+      left: 40px;
+      width: 40px;
+      height: 40px;
+      background-color: #0015ff80;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    #hotspot2 {
+      position: absolute;
+      top: 50px;
+      left: 120px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    #hotspot3 {
+      position: absolute;
+      top: 50px;
+      left: 180px;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(41, 14, 141);
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    #hotspot4 {
+      position: absolute;
+      top: 50px;
+      left: 240px;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(40, 11, 170);
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+    #instrucciones {
+      flex: 1;
+      cursor: pointer;
+    }
+    #prueba {
+      flex: 1;
+      cursor: pointer;
+    }
+    .texto-rojo {
+      font-size: 40px;
+      font-weight: bold;
+      color: red;
+    }
+
+
+    #examen-final {
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .pregunta {
+      margin-bottom: 15px;
+    }
+    .pregunta label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .pregunta input {
+      margin-right: 10px;
+    }
+    #boton-enviar {
+      background-color: #74e651;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #boton-enviar:hover {
+      background-color: #56b340;
+    }
+  </style>
+</head>
+<body>
+ <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "Conociendo el plato del buen comer"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1"><span class="text-hotspot">1</span></div>
+          <div id="hotspot2"><span class="text-hotspot">2</span></div>
+          <div id="hotspot3"><span class="text-hotspot">3</span></div>
+          <div id="hotspot4"><span class="text-hotspot">4</span></div>
+        
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz clic en cada uno de los grupos de alimentos para ver su descripción. Una vez que hayas visualizado todos, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/0</span>
+        <img id="imagen-resultado" width="200px" src="ping.gif" />
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="test.png" /></div>
+  </div>
+   <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Tendencias';
+    document.getElementById('texto-info').textContent = 'Las tendencias en maquillaje para esta temporada incluyen looks frescos, naturales y con énfasis en la piel luminosa.';
+    document.getElementById('imagen-info').setAttribute('src', 'tendencias.jpg');
+};
+
+document.getElementById('hotspot2').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Maquillaje';
+    document.getElementById('texto-info').textContent = 'El maquillaje de ojos es esencial para destacar tu mirada. El uso de sombras neutras y delineados suaves están en auge.';
+    document.getElementById('imagen-info').setAttribute('src', 'maquillaje.jpg');
+};
+
+document.getElementById('hotspot3').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Color';
+    document.getElementById('texto-info').textContent = 'Los colores vibrantes están dominando esta temporada. Los tonos rosados, morados y naranjas están siendo los favoritos en labios y mejillas.';
+    document.getElementById('imagen-info').setAttribute('src', 'colores.jpg');
+};
+
+document.getElementById('hotspot4').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Vibrantes';
+    document.getElementById('texto-info').textContent = 'Los tonos vibrantes en labios y ojos aportan energía al rostro. Los rojos intensos y fucsias son perfectos para un look audaz y moderno.';
+    document.getElementById('imagen-info').setAttribute('src', 'vibrantes.jpg');
+};
+
+ document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'hotspot-cursor.png');
+    };
+
+    document.getElementById('prueba').onclick = function() {
+      alert("Bienvenidos a la prueba de conocimientos");
+      alert("Responde correctamente todas las preguntas para ganar");
+
+let pregunta1 = prompt("¿Es cierto que las bases de maquillaje líquidas son mejores para pieles secas? (Sí/No)");
+pregunta1 = pregunta1.trim().toLowerCase();
+if (pregunta1 === "sí" || pregunta1 === "si") {
+  alert("¡Correcto! Las bases líquidas son más hidratantes.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: Sí.");
+}
+
+let pregunta2 = prompt("¿El iluminador se aplica antes del maquillaje en polvo? (Sí/No)");
+pregunta2 = pregunta2.trim().toLowerCase();
+if (pregunta2 === "no") {
+  alert("¡Correcto! El iluminador se aplica después del maquillaje en polvo.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: No.");
+}
+
+let pregunta3 = prompt("¿Se debe aplicar protector solar incluso en días nublados? (Sí/No)");
+pregunta3 = pregunta3.trim().toLowerCase();
+if (pregunta3 === "sí" || pregunta3 === "si") {
+  alert("¡Correcto! El protector solar protege contra los rayos UV incluso en días nublados.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: Sí.");
+}
+
+let pregunta4 = prompt("¿El maquillaje de ojos se debe quitar con agua caliente? (Sí/No)");
+pregunta4 = pregunta4.trim().toLowerCase();
+if (pregunta4 === "no") {
+  alert("¡Correcto! El agua caliente puede irritar los ojos, es mejor usar agua tibia.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: No.");
+}
+
+let pregunta5 = prompt("¿Es recomendable usar un primer antes de aplicar la base de maquillaje? (Sí/No)");
+pregunta5 = pregunta5.trim().toLowerCase();
+if (pregunta5 === "sí" || pregunta5 === "si") {
+  alert("¡Correcto! El primer ayuda a que la base dure más tiempo.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: Sí.");
+}
+
+let pregunta6 = prompt("¿El corrector debe ser siempre más claro que tu tono de piel? (Sí/No)");
+pregunta6 = pregunta6.trim().toLowerCase();
+if (pregunta6 === "no") {
+  alert("¡Correcto! El corrector debe ser del mismo tono o ligeramente más oscuro para cubrir imperfecciones.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: No.");
+}
+
+let pregunta7 = prompt("¿Los labiales mate suelen durar más que los labiales brillantes? (Sí/No)");
+pregunta7 = pregunta7.trim().toLowerCase();
+if (pregunta7 === "sí" || pregunta7 === "si") {
+  alert("¡Correcto! Los labiales mate tienden a durar más tiempo.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: Sí.");
+}
+
+let pregunta8 = prompt("¿Es bueno usar productos cosméticos caducados en la piel? (Sí/No)");
+pregunta8 = pregunta8.trim().toLowerCase();
+if (pregunta8 === "no") {
+  alert("¡Correcto! Los productos cosméticos caducados pueden irritar o dañar la piel.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: No.");
+}
+
+let pregunta9 = prompt("¿El maquillaje mineral es una buena opción para pieles sensibles? (Sí/No)");
+pregunta9 = pregunta9.trim().toLowerCase();
+if (pregunta9 === "sí" || pregunta9 === "si") {
+  alert("¡Correcto! El maquillaje mineral es suave y libre de químicos, ideal para pieles sensibles.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: Sí.");
+}
+
+let pregunta10 = prompt("¿El contouring es solo para ocasiones especiales? (Sí/No)");
+pregunta10 = pregunta10.trim().toLowerCase();
+if (pregunta10 === "no") {
+  alert("¡Correcto! El contouring se puede hacer para el día a día, dependiendo de tus preferencias.");
+  puntaje += 1;
+} else {
+  alert("Incorrecto. La respuesta correcta es: No.");
+}
+
+if (puntaje === 10) {
+  alert("¡Felicidades! Has respondido correctamente todas las preguntas.");
+} else {
+  alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+}
+
+document.getElementById("calif").textContent = puntaje + "/10";
+document.getElementById("resultado").setAttribute("class", "visible");
+}
+      
+  </script>
+</body>
+</html>
